@@ -22,8 +22,7 @@ class User {
 
 class Admin extends User {
   deleteUser(user) {
-    users = users.filter(u => {
-        console.log(u)
+    users = users.filter((u) => {
       return u.email != user.email;
     });
   }
@@ -33,8 +32,9 @@ var userOne = new User("ryu@ninjas.com", "Ryu");
 var userTwo = new User("yoshi@mariokorp.com", "Yoshi");
 var admin = new Admin("ryzo@ninjas.com", "Ryzo");
 
-admin.deleteUser(userTwo);
+var users = [userOne, userTwo, admin];
 
-var users = [userOne, userTwo];
+admin.deleteUser(userOne);
+
 
 console.log(users);
